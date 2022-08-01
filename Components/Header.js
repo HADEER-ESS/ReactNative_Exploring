@@ -3,10 +3,9 @@ import { View, Text, Button, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-export default function Header({title , searchState}){
+export default function Header({title}){
     const navigation = useNavigation()
-    const backToHome = () => {
-        searchState = 0;
+    const backToHome = () => {  
         navigation.goBack();
     }
     return(

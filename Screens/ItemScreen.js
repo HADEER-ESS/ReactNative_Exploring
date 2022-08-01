@@ -1,16 +1,26 @@
 import React from 'react';
-import {View, Text, Image, Button, TouchableOpacity} from 'react-native';
+import {View, Text, Image, Button, TouchableOpacity, Linking, Alert} from 'react-native';
 import Header from '../Components/Header';
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 //in class
 //when send data with navigation, we recieve it in (this.props.route.params.------)
 //in function
 //recieved income data in route.. from it we access the params (route.params.----)
 export default ItemScreen = ({route}) => {
-  const Wikipedia = `https://en.wikipedia.org/wiki/${route.params.name}`
+  const Wikipedia = `https://en.wikipedia.org/wiki/${route.params.name}`;
+  const openWikipedia = () => {
+    Linking.canOpenURL(Wikipedia)
+    .then(supported => {
+      if(supported){
+        Linking.openURL(Wikipedia)
+      }else{
+        Alert.alert("can't handel this URL")
+      }
+    })
+  }
   return (
     <View style={{flex: 1}}>
-      <Header title={route.params.name} searchState={route.params.opening}/>
+      <Header title={route.params.name}/>
       <View
         style={{
           justifyContent: 'flex-start',
@@ -97,8 +107,10 @@ export default ItemScreen = ({route}) => {
             </Text>
           </View>
         </View>
+        <View style={{flexDirection:'row' , justifyContent:'center' , alignItems:'center'}}>
+        <Text style={{fontSize:15 , paddingEnd:9 , color:'black'}}>To explore more visit Wikipedia:</Text>
         <TouchableOpacity 
-        onPress={()=>{}}
+        onPress={openWikipedia}
         style={{backgroundColor:'#5800FF' ,
         borderRadius:50 ,
         borderColor:'black',
@@ -106,8 +118,9 @@ export default ItemScreen = ({route}) => {
         width:50 ,
         height:50 ,
         justifyContent: 'center'}}>
-          <AntDesign name='google' size={25} color="#fff" style={{textAlign:'center'}}/>
+          <FontAwesome name='wikipedia-w' size={25} color="#fff" style={{textAlign:'center'}}/>
         </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
