@@ -29,14 +29,13 @@ export default ItemScreen = ({route}) => {
         }}>
         <Image
           source={{uri: `${route.params.Image}`}}
-          style={{width: '100%', height: '40%'}}
+          style={{width: '100%', height: '38%'}}
         />
         <View
           style={{
             width: '100%',
             justifyContent: 'flex-start',
             marginStart: 32,
-            marginTop: 19,
           }}>
           <View
             style={{
