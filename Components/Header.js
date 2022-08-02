@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, Text, Button, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { InputContext } from "../Provider/Provider";
 
 export default function Header({title}){
+    const {setInput} = useContext(InputContext)
     const navigation = useNavigation()
     const backToHome = () => {  
+        setInput('')
         navigation.goBack();
     }
     return(

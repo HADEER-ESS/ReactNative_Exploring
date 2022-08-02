@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, ScrollView, Image, TouchableOpacity} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-export default  Card = ({data}) => {
+export default  Card = ({data }) => {
   const navigation = useNavigation()
     return (
-      <ScrollView style={{backgroundColor: '#fff'}}>
-        <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap'}}>
+      <ScrollView style={{backgroundColor: '#FFF'}}>
+        <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap', marginTop:21}}>
           {data.map((element, index) => {
             return (
               <TouchableOpacity
@@ -23,13 +23,13 @@ export default  Card = ({data}) => {
                 }
                 key={index}
                 style={{
-                  backgroundColor: '#EEEEEE',
+                  backgroundColor: '#EEEE',
                   width: '50%',
-                  borderBottomColor: '#666',
-                  borderBottomWidth: 1,
-                  borderStartColor: '#666',
+                  borderWidth: 1,
+                  borderColor : '#FFF',
                   borderStartWidth: 1,
                   marginBottom: 21,
+                  borderRadius:11,
                 }}>
                 <Image
                   source={{uri: `${element.flags.png}`}}
