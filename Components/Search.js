@@ -68,6 +68,7 @@ export default Search = () => {
             value={input}
             onChangeText={val => renderChanged(val)}
             autoCapitalize="none"
+            underlineColorAndroid="transparent"
           />
         </View>
         {ready === 0 ?(
