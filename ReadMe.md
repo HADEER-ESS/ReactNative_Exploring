@@ -1,6 +1,6 @@
 <h1>Application Description</h1>
 
-<h3>Techniques</h3>
+<h3>Technology</h3>
 <p>-Fetch Country API and display its data in the main screen.</p>
 <p>-Normal Stack Navigation to details page, and each country Wikipide web page.</p>
 
